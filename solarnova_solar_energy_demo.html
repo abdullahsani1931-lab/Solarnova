@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SolarNova Energy | Solar Power Solutions</title>
+<meta name="description" content="Professional solar energy installation and clean power solutions demo website.">
+<style>
+:root{--bg:#07110d;--panel:#0d1b15;--panel2:#11251b;--text:#f5fff8;--muted:#9bb0a4;--sun:#ffd447;--green:#43e58b;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 85% 5%,rgba(255,212,71,.14),transparent 25%),radial-gradient(circle at 5% 35%,rgba(67,229,139,.1),transparent 30%),var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}.container{width:min(1140px,92%);margin:auto}
+nav{position:fixed;z-index:30;top:0;left:0;right:0;background:rgba(7,17,13,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.navin{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:20px;font-weight:950}.logo span{color:var(--sun)}
+.links{display:flex;gap:25px;color:#c9d6cf;font-size:14px}.links a:hover{color:var(--sun)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:0;background:linear-gradient(135deg,var(--sun),#ff9f1c);color:#151000;font-weight:900;cursor:pointer;box-shadow:0 14px 35px rgba(255,212,71,.18)}
+.btn.secondary{background:rgba(255,255,255,.055);border:1px solid var(--line);color:#fff;box-shadow:none}
+.hero{min-height:790px;padding-top:145px;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.badge{display:inline-block;padding:8px 13px;border-radius:99px;background:rgba(255,212,71,.08);border:1px solid rgba(255,212,71,.25);color:#ffe98d;font-size:12px;font-weight:900;letter-spacing:.4px}
+h1{font-size:clamp(45px,6vw,77px);line-height:.98;letter-spacing:-3px;margin:18px 0}.grad{background:linear-gradient(90deg,#fff,var(--sun),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;color:var(--muted);max-width:610px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}
+.stats{display:flex;gap:30px;margin-top:28px}.stat strong{display:block;font-size:25px}.stat span{font-size:12px;color:var(--muted)}
+.solar-scene{height:500px;position:relative;perspective:900px}.sun{position:absolute;width:170px;height:170px;border-radius:50%;right:8%;top:4%;background:radial-gradient(circle,#fff5a5 0,#ffd447 40%,#ff9f1c 72%,transparent 73%);filter:drop-shadow(0 0 40px rgba(255,212,71,.45))}
+.house{position:absolute;left:8%;right:0;bottom:40px;height:260px}.wall{position:absolute;bottom:0;left:18%;width:63%;height:165px;background:linear-gradient(135deg,#dce8df,#71857a);clip-path:polygon(0 24%,50% 0,100% 24%,100% 100%,0 100%);box-shadow:0 30px 50px #0007}.roof{position:absolute;left:10%;top:12%;width:79%;height:90px;background:#162b21;transform:skewY(-18deg);border:2px solid #31483a;box-shadow:0 20px 40px #0008}
+.panel{position:absolute;width:125px;height:62px;background:repeating-linear-gradient(90deg,#0c2630 0 20px,#244d58 21px 22px),repeating-linear-gradient(0deg,transparent 0 19px,#63a8ae 20px 21px);border:2px solid #78aeb0;transform:skewY(-18deg) rotateZ(-1deg);box-shadow:0 10px 30px #0009}.p1{left:23%;top:8%}.p2{left:43%;top:1%}.p3{left:63%;top:-7%}
+.card{position:absolute;padding:15px 18px;border-radius:16px;background:rgba(13,27,21,.87);border:1px solid var(--line);backdrop-filter:blur(15px);box-shadow:0 20px 45px #0006;font-size:13px}.c1{top:12%;left:0}.c2{bottom:5%;right:0}.dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;margin-right:7px}
+section{padding:95px 0}.eyebrow{color:var(--sun);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:950}.title{font-size:clamp(31px,4vw,48px);line-height:1.05;margin:8px 0 13px}.sub{color:var(--muted);max-width:690px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}.box{background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 18px 45px #0003}
+.service{min-height:205px;transition:.25s}.service:hover{transform:translateY(-7px);border-color:rgba(255,212,71,.3)}.icon{font-size:34px;margin-bottom:15px}.service h3{font-size:19px;margin-bottom:7px}.service p,.box p{color:var(--muted);font-size:14px}
+.pack{grid-template-columns:repeat(3,1fr)}.pack .box{min-height:320px}.featured{border-color:rgba(255,212,71,.45);transform:translateY(-8px);box-shadow:0 25px 60px rgba(255,212,71,.08)}.price{font-size:36px;font-weight:950;margin:12px 0}.price small{font-size:12px;color:var(--muted);font-weight:500}.box ul{list-style:none;color:#c9d6cf;font-size:14px;line-height:2.15;margin:15px 0}.box li:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.checks{display:grid;gap:13px;margin-top:25px;color:#c9d6cf}.checks div:before{content:"✓";color:var(--green);font-weight:900;margin-right:10px}
+.energy{border:1px solid var(--line);border-radius:28px;padding:32px;background:linear-gradient(135deg,rgba(67,229,139,.1),rgba(255,212,71,.07))}.bars{display:grid;gap:13px;margin-top:22px}.bar{height:13px;background:#0a1711;border-radius:99px;overflow:hidden}.fill{height:100%;width:82%;background:linear-gradient(90deg,var(--green),var(--sun));border-radius:99px}.fill.f2{width:67%}.fill.f3{width:91%}
+.review{min-height:180px}.stars{color:var(--sun);letter-spacing:2px}.review strong{display:block;margin-top:16px}.gallery{grid-template-columns:1.5fr .75fr .75fr}.visual{min-height:230px;border-radius:22px;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(145deg,#193729,#07100c)}.visual.big{min-height:480px;grid-row:span 2}.visual:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,rgba(255,212,71,.22),transparent 28%),linear-gradient(135deg,transparent,#030806 85%)}.roofline{position:absolute;width:72%;height:100px;left:14%;top:36%;border-top:3px solid #a3b9ad;transform:skewY(-16deg);box-shadow:0 -25px 0 rgba(67,229,139,.08)}.visual span{position:absolute;bottom:17px;left:18px;font-weight:850}
+.contact{border:1px solid var(--line);border-radius:28px;padding:35px;background:linear-gradient(135deg,rgba(255,212,71,.1),rgba(67,229,139,.08))}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}.form input,.form select,.form textarea{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:#07100b;color:#fff;outline:none}.form textarea{grid-column:1/-1;min-height:120px}.form button{grid-column:1/-1}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:120px;min-height:auto}.solar-scene{height:390px}.grid,.pack,.split,.gallery{grid-template-columns:1fr}.visual.big{grid-row:auto;min-height:300px}.featured{transform:none}.stats{flex-wrap:wrap}.form{grid-template-columns:1fr}.form textarea,.form button{grid-column:auto}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav><div class="container navin"><a class="logo" href="#">SOLAR<span>NOVA</span> <small style="font-size:9px;color:#91a399">ENERGY</small></a><div class="links"><a href="#solutions">Solutions</a><a href="#packages">Packages</a><a href="#work">Projects</a><a href="#reviews">Reviews</a><a href="#contact">Quote</a></div><a class="btn" href="#contact">Get Solar Quote</a></div></nav>
+
+<section class="container hero">
+<div><span class="badge">☀ CLEAN ENERGY • SMART SOLAR SOLUTIONS</span><h1>Power Your Future With <span class="grad">Solar Energy.</span></h1><p>Premium solar panel systems for homes and businesses—designed to reduce electricity costs, increase energy independence and deliver clean power for years.</p>
+<div class="actions"><a class="btn" href="#contact">Get a Free Quote →</a><a class="btn secondary" href="#solutions">Explore Solutions</a></div>
+<div class="stats"><div class="stat"><strong>500+</strong><span>Systems Installed</span></div><div class="stat"><strong>25 Years</strong><span>Panel Warranty*</span></div><div class="stat"><strong>24/7</strong><span>Support</span></div></div></div>
+<div class="solar-scene"><div class="sun"></div><div class="card c1"><span class="dot"></span>Clean energy system online</div><div class="card c2">⚡ Smart solar • Lower bills</div><div class="house"><div class="roof"></div><div class="wall"></div><div class="panel p1"></div><div class="panel p2"></div><div class="panel p3"></div></div></div>
+</section>
+
+<section id="solutions"><div class="container"><span class="eyebrow">Solar solutions</span><h2 class="title">One energy partner. Every solar solution.</h2><p class="sub">From your first site assessment to installation and support, we make switching to solar simple.</p>
+<div class="grid">
+<div class="box service"><div class="icon">🏠</div><h3>Residential Solar</h3><p>Custom rooftop systems designed around your home's electricity needs and available roof space.</p></div>
+<div class="box service"><div class="icon">🏢</div><h3>Commercial Solar</h3><p>Reduce operating costs with scalable solar systems for offices, shops, warehouses and businesses.</p></div>
+<div class="box service"><div class="icon">🔋</div><h3>Battery Storage</h3><p>Store solar power for evening use, backup protection and greater energy independence.</p></div>
+<div class="box service"><div class="icon">⚡</div><h3>Hybrid Systems</h3><p>Combine solar, batteries and grid power into one smarter energy solution.</p></div>
+<div class="box service"><div class="icon">🛠️</div><h3>Installation</h3><p>Professional installation, system setup and commissioning with clean workmanship.</p></div>
+<div class="box service"><div class="icon">📊</div><h3>Monitoring</h3><p>Track solar production and system performance with modern monitoring technology.</p></div>
+</div></div></section>
+
+<section id="packages"><div class="container"><span class="eyebrow">System options</span><h2 class="title">A package for every energy goal.</h2><p class="sub">Demo packages below—replace capacity and pricing with your client's actual offer.</p>
+<div class="grid pack">
+<div class="box"><h3>Home Essential</h3><div class="price">3–5 kW</div><p>Great for smaller homes and everyday power needs.</p><ul><li>Solar panel system</li><li>Inverter setup</li><li>Professional installation</li><li>System monitoring</li></ul><a class="btn secondary" href="#contact">Request Quote</a></div>
+<div class="box featured"><h3>Home Plus</h3><div class="price">6–10 kW</div><p>Our popular choice for larger household energy needs.</p><ul><li>High-efficiency panels</li><li>Premium inverter</li><li>Installation & commissioning</li><li>Monitoring & support</li></ul><a class="btn" href="#contact">Request Quote</a></div>
+<div class="box"><h3>Business Power</h3><div class="price">10+ kW</div><p>Scalable systems designed for commercial energy demand.</p><ul><li>Custom system design</li><li>Commercial installation</li><li>Performance monitoring</li><li>Ongoing support</li></ul><a class="btn secondary" href="#contact">Request Quote</a></div>
+</div></div></section>
+
+<section><div class="container split"><div><span class="eyebrow">Energy impact</span><h2 class="title">Turn sunlight into smarter savings.</h2><p class="sub">A professionally designed solar system can help reduce reliance on grid electricity and give you more control over your energy use.</p><div class="checks"><div>Custom system sizing</div><div>High-efficiency solar technology</div><div>Professional installation</div><div>Monitoring and after-sales support</div></div></div>
+<div class="energy"><h3 style="font-size:25px">Smart energy dashboard</h3><p style="margin-top:5px">Illustrative demo visualization</p><div class="bars"><div><small>Solar production</small><div class="bar"><div class="fill"></div></div></div><div><small>Energy independence</small><div class="bar"><div class="fill f2"></div></div></div><div><small>System performance</small><div class="bar"><div class="fill f3"></div></div></div></div></div></div></section>
+
+<section id="work"><div class="container"><span class="eyebrow">Our work</span><h2 class="title">Solar projects built for real-world performance.</h2><p class="sub">Replace these demo visuals with your client's real installation photos.</p><div class="grid gallery"><div class="visual big"><div class="roofline"></div><span>Residential rooftop system</span></div><div class="visual"><div class="roofline"></div><span>Commercial solar</span></div><div class="visual"><div class="roofline"></div><span>Battery storage</span></div><div class="visual"><div class="roofline"></div><span>Hybrid energy system</span></div><div class="visual"><div class="roofline"></div><span>Premium panel installation</span></div></div></div></section>
+
+<section id="reviews"><div class="container"><span class="eyebrow">Customer feedback</span><h2 class="title">Built around trust.</h2><div class="grid"><div class="box review"><div class="stars">★★★★★</div><p>“The whole process was explained clearly and the installation looks extremely clean.”</p><strong>— Ahmed R.</strong></div><div class="box review"><div class="stars">★★★★★</div><p>“Our system is performing great and the monitoring makes it easy to track production.”</p><strong>— Sarah M.</strong></div><div class="box review"><div class="stars">★★★★★</div><p>“Professional team, smooth installation and excellent communication from start to finish.”</p><strong>— Daniel K.</strong></div></div></div></section>
+
+<section id="contact"><div class="container contact"><span class="eyebrow">Free solar assessment</span><h2 class="title">Let's design your solar system.</h2><p class="sub">Tell us about your property and energy needs. This demo form displays a confirmation only; connect it to the client's real lead system before launch.</p>
+<form class="form" onsubmit="event.preventDefault();let m=document.getElementById('msg');m.style.display='block';m.textContent='✓ Quote request received — demo only. Connect this form to the client’s email/CRM before launch.'">
+<input required placeholder="Your name"><input required type="tel" placeholder="Phone number"><input required type="email" placeholder="Email address"><input placeholder="City / area"><select><option>Property type</option><option>Residential</option><option>Commercial</option><option>Industrial</option></select><select><option>Interested in</option><option>Solar panels</option><option>Solar + battery</option><option>Hybrid system</option><option>Commercial solar</option></select><textarea placeholder="Tell us about your electricity needs or monthly bill..."></textarea><button class="btn" type="submit">Request Free Solar Quote →</button></form><div id="msg" style="display:none;color:var(--green);font-weight:800;margin-top:14px"></div>
+<div style="display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;color:#c9d6cf;font-size:14px"><span>📞 +92 300 9876543</span><span>✉ hello@solarnova.example</span><span>📍 Main Street, City Center</span><span>🕒 Mon–Sat: 9AM–6PM</span></div>
+</div></section>
+<footer><div class="container foot"><span>© 2026 SolarNova Energy — Demo Website</span><span>Solar Panels • Batteries • Hybrid Systems • Installation</span></div></footer>
+</body></html>
